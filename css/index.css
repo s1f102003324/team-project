@@ -1,8 +1,5 @@
-body {
-    background-color:white;
-    color: black;
-}
-
-h1 {
+body{
+    background-color: #ffb7b7;
+    font-family: 'HG正楷書体-PRO';
     text-align: center;
 }

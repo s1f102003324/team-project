@@ -4,10 +4,87 @@
         <meta charset="UTF-8">
         <title>トップページ</title>
         <link rel="stylesheet" type="text/css" href="./css/index.css">
+        <style type="text/css">
+            #slideshow {
+                position: relative;
+                
+            }
+    
+            #slideshow img {
+                text-align: center;
+                position: absolute;
+                top:  0;
+                left: 0;
+                z-index: 8;
+                opacity: 0.0;
+            }
+    
+            #slideshow img.active {
+                z-index: 10;
+                opacity: 1.0;
+            }
+    
+            #slideshow img.last-active {
+                z-index: 9;
+            } 
+            .resizeimage img { 
+                width: 100%;
+                height: 300px;
+             }
+        </style>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript">
+
+            function slideSwitch() {
+                var $active = $('#slideshow img.active');
+    
+                if ( $active.length == 0 ) $active = $('#slideshow img:last');
+    
+                var $next =  $active.next().length ? $active.next()
+                    : $('#slideshow img:first');
+    
+                $active.addClass('last-active');
+    
+                $next.css({opacity: 0.0})
+                    .addClass('active')
+                    .animate({opacity: 1.0}, 1000, function() {
+                        $active.removeClass('active last-active');
+                    });
+            }
+    
+            $(function() {
+                setInterval( "slideSwitch()", 3000 );
+            });
+    
+        </script>
     </head>
-    <body>
-        <h1>これはトップページです</h1>
-        <p>２つめのページへの<a href="./second.html">リンク</a></p>
+    <body style="text-align:center">
+         <h1>赤羽のおすすめスポット！</h1>
+         
+         <p id="slideshow" class="resizeimage">
+            <img src="spot3.jpg" class="active"  >
+            <img src="spot4.jpg" >
+            <img src="spot1.jpg" >
+            <img src="spot2.jpg" >
+        </p>
+    
+        <div style="margin-top: 400px">
+         <p>みなさんは、赤羽についてどれくらい知っていますか？</p>
+         <p>このサイトでは私たちがおすすめする赤羽のスポットを紹介します！</p>
+         <p>これを見たら赤羽について詳しくなれるかも！？</p>
+         <br>
+         <br>
+         <table border="1" align="center" >
+             <tr>
+                 <td><img src="food1.jpg" width="500" height="250"></td>
+                 <td><img src="spot1.jpg" width="500" height="250"></td>
+             </tr>
+             <tr>
+                 <td><a href="./food.html">食べ物はこちら！</a></td>
+                 <td><a href="./spot.html">スポットはこちら！</a></td>
+             </tr>
+         </table>
+         </div>
     </body>
 
 
