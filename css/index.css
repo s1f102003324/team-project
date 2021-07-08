@@ -9,11 +9,39 @@ h1{
     padding: 30px 20px 30px 20px;
 }
 
+h2#title {
+    padding: 30px 10px 10px 10px;
+}
+
+h3#color{
+    color: blue;
+}
+
 h3#m1 {
     color: brown;
+    font-size: 25px;
 
+}
+
+h3#m2 {
+    font-size: 25px;
+    padding-top: 20px;
 }
 
 h3#m3 {
     color: green;
+    font-size: 25px;
+    padding-top: 20px;
+}
+
+h4#decoration{
+    text-decoration: underline;
+}
+
+h4#alert{
+    text-decoration: underline;
+}
+
+p.text{
+    font-size: 22px;
 }
