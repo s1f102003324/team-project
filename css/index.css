@@ -3,3 +3,8 @@ body{
     font-family: 'HG正楷書体-PRO';
     text-align: center;
 }
+
+h1{
+    text-decoration: underline;
+}
+
